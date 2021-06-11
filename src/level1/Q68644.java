@@ -1,5 +1,6 @@
 package level1;
 
+// 두 개 뽑아서 더하기
 // https://programmers.co.kr/learn/courses/30/lessons/68644
 
 import java.util.*;
@@ -7,16 +8,15 @@ import java.util.*;
 public class Q68644 {
 
     public static void main(String[] args) {
-        Solution solution = new Solution();
-        System.out.println(Arrays.toString(solution.solution(new int[]{2, 1, 3, 4, 1}))); // [2,3,4,5,6,7]
-        System.out.println(Arrays.toString(solution.solution(new int[]{5, 0, 2, 7}))); // [2,5,7,9,12]
+        Q68644 ex1 = new Q68644();
+        Q68644 ex2 = new Q68644();
+
+        System.out.println(Arrays.toString(ex1.solution(new int[]{2, 1, 3, 4, 1}))); // [2,3,4,5,6,7]
+        System.out.println(Arrays.toString(ex2.solution(new int[]{5, 0, 2, 7}))); // [2,5,7,9,12]
     }
 
-}
-
-class Solution {
     public int[] solution(int[] numbers) {
-        if(numbers == null || numbers.length == 0) return new int[0];
+        if (numbers == null || numbers.length == 0) return new int[0];
 
         Map<Integer, Integer> result = new HashMap<>();
 
@@ -30,7 +30,7 @@ class Solution {
         int[] answer = new int[result.size()];
 
         int i = 0;
-        for(int n : result.keySet()) {
+        for (int n : result.keySet()) {
             answer[i] = n;
             i++;
         }
