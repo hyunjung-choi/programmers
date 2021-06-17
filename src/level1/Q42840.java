@@ -37,13 +37,12 @@ public class Q42840 {
 
     private List<Integer> compare(List<Integer> scores) {
         List<Integer> bestScore = new ArrayList<>();
-        int max = 0;
+        int max = Math.max(scores.get(0), Math.max(scores.get(1), scores.get(2)));
         for(int i = 0; i < scores.size(); i++) {
             if(scores.get(i) == 0) continue;
-            if(max <= scores.get(i)) {
-                max = scores.get(i);
+
+            if(max == scores.get(i))
                 bestScore.add(i + 1);
-            }
         }
         return bestScore;
     }
