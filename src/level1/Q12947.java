@@ -5,18 +5,7 @@ package level1;
 
 public class Q12947 {
     public boolean solution(int x) {
-        boolean answer = true;
-        if(x % digitSum(x) != 0)
-            return false;
-        return answer;
-    }
-
-    private int digitSum(int x) {
-        int sum = 0;
-        while(x != 0) {
-            sum += x % 10;
-            x /= 10;
-        }
-        return sum;
+        int s = String.valueOf(x).chars().map(Character::getNumericValue).sum();
+        return x % s == 0;
     }
 }
